@@ -35,5 +35,12 @@ describe('Counter', () => {
     wrapper.find('#up-btn').simulate('click')
     expect(wrapper.find('#value').text()).toBe("1")
   })
+
+  test('render the click event for "down button" and decrease value by 1', () => {
+    wrapper.find('#up-btn').simulate('click')
+    expect(wrapper.find('#value').text()).toBe("1")
+    wrapper.find('#down-btn').simulate('click')
+    expect(wrapper.find('#value').text()).toBe("0")
+  })
 });
 

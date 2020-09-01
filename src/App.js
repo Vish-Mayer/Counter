@@ -12,7 +12,7 @@ function App() {
       <button id="up-btn" onClick={ () => setState(counter + 1)}>
         Up
       </button>
-      <button id="down-btn">
+      <button id="down-btn" onClick={ () => setState(counter - 1)}>
         Down
       </button>
     </div>
