@@ -26,5 +26,10 @@ describe('Counter', () => {
   test('renders the intial value of state in div', () => {
     expect(wrapper.find("#value").text()).toBe("0")
   })
+
+  test('render the click event for "up button" and increase value by 1', () => {
+    wrapper.find('#up-btn').simulate('click')
+    expect(wrapper.find('#value').text()).toBe("1")
+  })
 });
 
