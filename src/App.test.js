@@ -8,13 +8,18 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 describe('Counter', () => {
+
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
   test('renders title of application', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find("h1").text()).toContain("Counter Application")
   });
 
   test('renders a button with text "Up"', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find("#up-btn").text()).toBe("Up")
   })
 });
