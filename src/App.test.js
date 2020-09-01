@@ -22,5 +22,9 @@ describe('Counter', () => {
   test('renders a button with text "Up"', () => {
     expect(wrapper.find("#up-btn").text()).toBe("Up")
   })
+
+  test('renders the intial value of state in div', () => {
+    expect(wrapper.find("#value").text()).toBe("0")
+  })
 });
 
