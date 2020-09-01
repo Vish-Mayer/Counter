@@ -4,10 +4,11 @@ import './App.css';
 
 function App() {
 
+  const [counter, setState] = React.useState(0)
   return (
     <div className="App">
       <h1>Counter Application</h1>
-  <div id="value">0</div>
+  <div id="value">{counter}</div>
       <button id="up-btn">Up</button>
     </div>
   );
