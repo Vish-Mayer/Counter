@@ -1,22 +1,37 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
+class App extends Component {
 
-  const [counter, setState] = React.useState(0)
-  return (
-    <div className="App">
-      <h1>Counter Application</h1>
-      <div id="value">{counter}</div>
-      <button id="up-btn" onClick={ () => setState(counter + 1)}>
-        Up
-      </button>
-      <button id="down-btn" onClick={ () => setState(counter - 1)}>
-        Down
-      </button>
-    </div>
-  );
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0
+    };
+  }
+
+  increment() {
+    this.setState({
+      number: this.state.number + 1
+    });
+  }
+
+  decrement() {
+    this.setState({
+      number: this.state.number - 1
+    })
+  }
+
+  render() {
+    return (
+
+      <div className="App">
+        <h1>Counter Application</h1>
+        <div id="number">{this.state.number}</div>
+        <button id="up-btn" onClick={this.increment.bind(this)}>Up</button>
+        <button id="down-btn" onClick={this.decrement.bind(this)}>Down</button>
+      </div>
+    );
+  }
 }
 
 export default App;

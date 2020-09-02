@@ -27,20 +27,20 @@ describe('Counter', () => {
     expect(wrapper.find("#down-btn").text()).toBe("Down")
   })
 
-  test('renders the intial value of state in div', () => {
-    expect(wrapper.find("#value").text()).toBe("0")
+  test('renders the intial number of state in div', () => {
+    expect(wrapper.find("#number").text()).toBe("0")
   })
 
-  test('render the click event for "up button" and increase value by 1', () => {
+  test('render the click event for "up button" and increase number by 1', () => {
     wrapper.find('#up-btn').simulate('click')
-    expect(wrapper.find('#value').text()).toBe("1")
+    expect(wrapper.find('#number').text()).toBe("1")
   })
 
-  test('render the click event for "down button" and decrease value by 1', () => {
+  test('render the click event for "down button" and decrease number by 1', () => {
     wrapper.find('#up-btn').simulate('click')
-    expect(wrapper.find('#value').text()).toBe("1")
+    expect(wrapper.find('#number').text()).toBe("1")
     wrapper.find('#down-btn').simulate('click')
-    expect(wrapper.find('#value').text()).toBe("0")
+    expect(wrapper.find('#number').text()).toBe("0")
   })
 });
 
