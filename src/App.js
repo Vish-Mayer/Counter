@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './App.css';
 class App extends Component {
 
   constructor(props) {
@@ -16,14 +16,19 @@ class App extends Component {
   }
 
   decrement() {
-    this.setState({
-      number: this.state.number - 1
-    })
+    if(this.state.number === 0) {
+      this.setState({
+        number: 0
+      });
+    }else {
+      this.setState({
+        number: this.state.number - 1
+      });
+    }
   }
 
   render() {
     return (
-
       <div className="App">
         <h1>Counter Application</h1>
         <div id="number">{this.state.number}</div>

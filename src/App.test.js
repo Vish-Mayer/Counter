@@ -42,5 +42,9 @@ describe('Counter', () => {
     wrapper.find('#down-btn').simulate('click')
     expect(wrapper.find('#number').text()).toBe("0")
   })
+  test('click event for "down button" is diabled when number is 0', () => {
+    wrapper.find('#down-btn').simulate('click')
+    expect(wrapper.find('#number').text()).toBe("0")
+  })
 });
 
